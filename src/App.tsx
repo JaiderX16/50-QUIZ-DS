@@ -9,606 +9,638 @@ interface Question {
   explanation: string;
 }
 
-const questions: Question[] = [
+const questions = [
   {
     id: 1,
-    question: "¿Cuál es el primer paso en el proceso de desarrollo seguro de software?",
+    question: "¿Cuál es una de las mejores prácticas para asegurar una base de datos?",
     options: [
-      "Implementar controles de seguridad",
-      "Realizar análisis de amenazas",
-      "Definir los requerimientos de seguridad",
-      "Ejecutar pruebas de penetración"
+      "No aplicar cifrado a los datos",
+      "Utilizar la versión más antigua del software",
+      "Proteger todos los datos con cifrado",
+      "Eliminar las bases de datos antiguas"
     ],
-    correctAnswer: 0,
-    explanation: "Los requerimientos de seguridad deben definirse desde el inicio del proyecto para garantizar que la seguridad sea considerada en todas las fases del desarrollo."
+    correctAnswer: 2,
+    explanation: "El cifrado es una medida fundamental para proteger la confidencialidad de los datos en bases de datos, tanto en reposo como en tránsito."
   },
   {
     id: 2,
-    question: "¿Qué significa OWASP en el contexto de seguridad web?",
+    question: "¿Qué tipo de prueba ayuda a identificar todas las librerías y dependencias empleadas para verificar el uso correcto de componentes según licencias como GNU/GPL, Apache, etc.?",
     options: [
-      "Open Web Application Security Project",
-      "Online Web Application Security Protocol",
-      "Organized Web Application Security Platform",
-      "Official Web Application Security Process"
+      "Integración",
+      "SCA",
+      "SAST",
+      "Unitarias",
+      "Carga",
+      "DAST"
     ],
-    correctAnswer: 0,
-    explanation: "OWASP (Open Web Application Security Project) es una organización sin fines de lucro dedicada a mejorar la seguridad del software."
+    correctAnswer: 1,
+    explanation: "SCA (Software Composition Analysis) se enfoca en analizar componentes de terceros, identificando librerías, dependencias y verificando licencias y vulnerabilidades."
   },
   {
     id: 3,
-    question: "¿Cuál de las siguientes es una práctica esencial en la validación de entrada?",
+    question: "Un vehículo autónomo comienza a tomar decisiones erróneas debido a pequeños cambios en las señales de tráfico que no son detectables para los humanos. ¿Qué tipo de ataque está afectando al modelo del vehículo autónomo?",
     options: [
-      "Implementar validación tanto en el cliente como en el servidor",
-      "Confiar en la validación del lado del cliente únicamente",
-      "Validar solo los datos críticos",
-      "Validar únicamente en el servidor de base de datos"
+      "Envenenamiento de datos",
+      "Ataque adversarial",
+      "Filtración de información",
+      "Inyección de código"
     ],
-    correctAnswer: 0,
-    explanation: "La validación debe implementarse tanto en el cliente (para experiencia de usuario) como en el servidor (para seguridad real), ya que la validación del cliente puede ser fácilmente evitada."
+    correctAnswer: 1,
+    explanation: "Los ataques adversariales utilizan modificaciones imperceptibles para humanos pero que engañan a los modelos de IA, causando clasificaciones erróneas."
   },
   {
     id: 4,
-    question: "¿Qué es la inyección SQL y cómo se puede prevenir?",
+    question: "¿Cuál de los siguientes NO representa un área crítica de la superficie de ataque móvil de acuerdo con OWASP MASVS?",
     options: [
-      "Un ataque que usa consultas preparadas para prevenirse",
-      "Un método de optimización de base de datos",
-      "Un ataque donde código SQL malicioso se ejecuta, prevenible con consultas parametrizadas",
-      "Una técnica de respaldo de base de datos"
+      "MASVS-NETWORK",
+      "MASVS-AUTH",
+      "MASVS-PLATFORM",
+      "MASVS-DEVOPS",
+      "MASVS-CRYPTO",
+      "MASVS-STORAGE"
     ],
-    correctAnswer: 2,
-    explanation: "La inyección SQL es un ataque donde se inserta código SQL malicioso. Se previene usando consultas parametrizadas, procedimientos almacenados y validación de entrada."
+    correctAnswer: 3,
+    explanation: "MASVS-DEVOPS no es una categoría estándar en OWASP MASVS. Las categorías reales incluyen NETWORK, AUTH, PLATFORM, CRYPTO, STORAGE, CODE, y RESILIENCE."
   },
   {
     id: 5,
-    question: "¿Cuál es la diferencia entre autenticación y autorización?",
+    question: "¿Qué enfoque debe utilizarse para configurar un ambiente seguro?",
     options: [
-      "No hay diferencia, son términos sinónimos",
-      "Autenticación verifica identidad, autorización verifica permisos",
-      "Autorización verifica identidad, autenticación verifica permisos",
-      "Ambas solo verifican la identidad del usuario"
+      "Mantener cuentas predeterminadas activas",
+      "Otorgar derechos explícitos a todos los usuarios",
+      "Dar acceso administrativo por defecto",
+      "Eliminar servicios innecesarios"
     ],
-    correctAnswer: 1,
-    explanation: "La autenticación verifica quién eres (identidad), mientras que la autorización determina qué puedes hacer (permisos y accesos)."
+    correctAnswer: 3,
+    explanation: "Eliminar servicios innecesarios reduce la superficie de ataque y sigue el principio de menor privilegio, mejorando la seguridad del ambiente."
   },
   {
     id: 6,
-    question: "¿Qué característica debe tener una contraseña segura?",
+    question: "¿Qué categoría establece que la aplicación debe contar con un mecanismo para hacer cumplir las actualizaciones de la aplicación?",
     options: [
-      "Mínimo 8 caracteres con combinación de mayúsculas, minúsculas, números y símbolos",
-      "Solo letras minúsculas para facilitar el recuerdo",
-      "Solo números para mayor seguridad",
-      "Palabras del diccionario para facilitar el recuerdo"
+      "MASVS-CODE",
+      "MASVS-STORAGE",
+      "MASVS-CRYPTO",
+      "MASVS-DEVOPS",
+      "MASVS-AUTH",
+      "MASVS-NETWORK"
     ],
     correctAnswer: 0,
-    explanation: "Una contraseña segura debe tener al menos 8 caracteres (preferiblemente más) y combinar mayúsculas, minúsculas, números y símbolos especiales."
+    explanation: "MASVS-CODE cubre los controles relacionados con la calidad del código y mecanismos de actualización para mantener la aplicación segura."
   },
   {
     id: 7,
-    question: "¿Qué es el principio de menor privilegio?",
+    question: "¿Qué vulnerabilidad se produce cuando las prácticas recomendadas de seguridad no se siguen correctamente, incluyendo parches no aplicados, exposición de logs de depuración, servicios innecesarios, implementación incorrecta de CORS, etc.?",
     options: [
-      "Dar a los usuarios el máximo acceso posible",
-      "Otorgar solo los permisos mínimos necesarios para realizar una tarea",
-      "Restringir el acceso solo a administradores",
-      "Permitir acceso completo a todos los desarrolladores"
+      "Autorización de nivel de función rota",
+      "Autorización de nivel de propiedad de objeto roto",
+      "Acceso sin restricciones a flujos comerciales sensibles",
+      "Falsificación de solicitudes del lado del servidor",
+      "Gestión inadecuada del inventario",
+      "Configuración incorrecta de seguridad"
     ],
-    correctAnswer: 1,
-    explanation: "El principio de menor privilegio establece que se debe otorgar solo los permisos mínimos necesarios para que un usuario o proceso pueda realizar su función específica."
+    correctAnswer: 5,
+    explanation: "La configuración incorrecta de seguridad ocurre cuando no se implementan correctamente las mejores prácticas de seguridad."
   },
   {
     id: 8,
-    question: "¿Cuál es la importancia del cifrado en el desarrollo seguro?",
+    question: "¿Cuál de las siguientes afirmaciones sobre SAST y SCA es correcta?",
     options: [
-      "Solo es importante para aplicaciones bancarias",
-      "Protege la confidencialidad e integridad de los datos",
-      "Mejora el rendimiento de la aplicación",
-      "No es necesario si se tiene un firewall"
+      "SCA es una técnica que evalúa el rendimiento y la seguridad de una aplicación al ejecutarla",
+      "SAST permite detectar vulnerabilidades de seguridad en el código fuente sin necesidad de ejecutar la aplicación",
+      "SCA solo identifica problemas de seguridad y no aborda otros defectos en el código",
+      "SCA se enfoca principalmente en la calidad del código y no abarca la seguridad en la aplicación",
+      "SAST se utiliza exclusivamente para analizar el rendimiento de una aplicación",
+      "SAST y SCA son lo mismo"
     ],
     correctAnswer: 1,
-    explanation: "El cifrado es fundamental para proteger la confidencialidad e integridad de los datos sensibles, tanto en tránsito como en reposo."
+    explanation: "SAST (Static Application Security Testing) analiza el código fuente sin ejecutar la aplicación, detectando vulnerabilidades de seguridad de forma estática."
   },
   {
     id: 9,
-    question: "¿Por qué es importante usar HTTPS en aplicaciones web?",
+    question: "La gestión automática de memoria en lenguajes de programación más nuevos permite prevenir ataques que sobrecarguen la memoria con objetos inalcanzables. ¿Esto podría ayudar a prevenir ataques de denegación de servicio?",
     options: [
-      "Solo es necesario para sitios de comercio electrónico",
-      "Protege la integridad y confidencialidad de los datos transmitidos",
-      "Mejora la velocidad de carga del sitio web",
-      "Es obligatorio para todos los sitios web"
+      "Falso",
+      "Verdadero"
     ],
     correctAnswer: 1,
-    explanation: "El HTTPS utiliza certificados SSL/TLS para establecer una conexión segura, protegiendo la integridad y confidencialidad de los datos transmitidos."
+    explanation: "La gestión automática de memoria (garbage collection) ayuda a prevenir memory leaks y ataques DoS relacionados con el agotamiento de memoria."
   },
   {
     id: 10,
-    question: "¿Qué es la autenticación multifactor (MFA)?",
+    question: "¿Qué control garantiza que cualquier dato confidencial almacenado intencionalmente por la aplicación esté protegido adecuadamente, independientemente de la ubicación de destino?",
     options: [
-      "Combinación de dos o más factores independientes de autenticación",
-      "Un método que solo utiliza contraseñas",
-      "Un sistema que solo funciona con huellas digitales",
-      "Una técnica obsoleta de seguridad"
+      "MASVS-NETWORK",
+      "MASVS-CRYPTO",
+      "MASVS-AUTH",
+      "MASVS-STORAGE",
+      "MASVS-RESILIENCE",
+      "MASVS-DEVOPS"
     ],
-    correctAnswer: 0,
-    explanation: "La autenticación multifactor combina dos o más factores independientes (algo que sabes, algo que tienes, algo que eres), aumentando significativamente la seguridad."
+    correctAnswer: 3,
+    explanation: "MASVS-STORAGE se enfoca en garantizar que los datos confidenciales estén protegidos adecuadamente en cualquier ubicación de almacenamiento."
   },
   {
     id: 11,
-    question: "¿Qué son las pruebas de penetración?",
+    question: "¿Cómo se pueden mitigar las vulnerabilidades de autenticación rota?",
     options: [
-      "Pruebas de rendimiento del sistema",
-      "Evaluaciones autorizadas que simulan ataques para identificar vulnerabilidades",
-      "Análisis de código fuente",
-      "Pruebas de usabilidad"
+      "Eliminando el uso de tokens",
+      "Implementando mecanismos de autenticación sólidos",
+      "Deshabilitando todas las claves de la API",
+      "Ignorando la gestión de sesiones"
     ],
     correctAnswer: 1,
-    explanation: "Las pruebas de penetración son evaluaciones autorizadas que simulan ataques reales para identificar vulnerabilidades antes de que sean explotadas por atacantes."
+    explanation: "Los mecanismos de autenticación sólidos incluyen autenticación multifactor, gestión segura de sesiones y validación adecuada de credenciales."
   },
   {
     id: 12,
-    question: "¿Qué es un ataque de Cross-Site Scripting (XSS)?",
+    question: "Durante la implementación de un nuevo entorno en la nube, el equipo de TI decide usar scripts automatizados para aprovisionar servidores y bases de datos. ¿Qué enfoque están utilizando?",
     options: [
-      "Un ataque que solo afecta a servidores",
-      "Un tipo de ataque de denegación de servicio",
-      "Un ataque donde se inyecta código malicioso que se ejecuta en el navegador del usuario",
-      "Un método para optimizar sitios web"
+      "Administración de artefactos",
+      "DevSecOps",
+      "Consistencia operativa",
+      "Infraestructura como Código (IaC)"
     ],
-    correctAnswer: 2,
-    explanation: "XSS es un ataque donde se inyecta código malicioso (generalmente JavaScript) que se ejecuta en el navegador del usuario, permitiendo robar información o realizar acciones no autorizadas."
+    correctAnswer: 3,
+    explanation: "Infraestructura como Código (IaC) utiliza scripts y plantillas para automatizar el aprovisionamiento y configuración de infraestructura."
   },
   {
     id: 13,
-    question: "¿Qué es la gestión segura de sesiones?",
+    question: "¿Cuál es la práctica recomendada para actualizar las imágenes de contenedor en un entorno DevOps?",
     options: [
-      "Mantener sesiones abiertas indefinidamente",
-      "Usar cookies sin cifrar para almacenar datos de sesión",
-      "Implementar tiempos de expiración y rotación de tokens",
-      "Almacenar credenciales en texto plano"
+      "No actualizar las imágenes si funcionan correctamente",
+      "Actualizar las imágenes manualmente sin pruebas",
+      "Automatizar la actualización de las imágenes base y revisar las vulnerabilidades",
+      "Esperar a que surjan vulnerabilidades antes de actualizar las imágenes"
     ],
     correctAnswer: 2,
-    explanation: "La gestión segura de sesiones incluye prácticas como tiempos de expiración, rotación de tokens, invalidación de sesiones y protección de cookies para prevenir ataques de secuestro de sesión."
+    explanation: "La automatización de actualizaciones con revisión de vulnerabilidades asegura que los contenedores mantengan parches de seguridad actualizados."
   },
   {
     id: 14,
-    question: "¿Qué es CSRF (Cross-Site Request Forgery)?",
+    question: "¿Cómo puede prevenirse una configuración insegura?",
     options: [
-      "Un método de autenticación segura",
-      "Un ataque que fuerza a usuarios autenticados a ejecutar acciones no deseadas",
-      "Una técnica de cifrado",
-      "Un protocolo de comunicación segura"
+      "Usando credenciales compartidas en todos los entornos",
+      "Eliminando funciones y frameworks no utilizados",
+      "No actualizar configuraciones",
+      "Evitando procesos de hardening"
     ],
     correctAnswer: 1,
-    explanation: "CSRF es un ataque que engaña a usuarios autenticados para que ejecuten acciones no deseadas en aplicaciones web donde están autenticados."
+    explanation: "Eliminar componentes, funciones y frameworks no utilizados reduce la superficie de ataque y previene configuraciones inseguras."
   },
   {
     id: 15,
-    question: "¿Cuál es la importancia de la gestión de sesiones segura?",
+    question: "¿Cuál es el propósito principal de las herramientas utilizadas en DevOps para gestionar riesgos y vulnerabilidades?",
     options: [
-      "Solo mejora la velocidad de la aplicación",
-      "Previene el secuestro de sesiones y accesos no autorizados",
-      "Reduce el uso de memoria",
-      "Facilita el desarrollo"
+      "Detectar y marcar los riesgos y vulnerabilidades para su investigación",
+      "Mejorar la eficiencia del proceso de desarrollo",
+      "Asegurar la infraestructura en la nube",
+      "Automatizar el proceso de entrega continua"
     ],
-    correctAnswer: 1,
-    explanation: "La gestión segura de sesiones es crucial para prevenir ataques como el secuestro de sesiones, fijación de sesiones y accesos no autorizados."
+    correctAnswer: 0,
+    explanation: "Las herramientas de seguridad en DevOps tienen como objetivo principal identificar, detectar y señalar riesgos para su posterior análisis y remediación."
   },
   {
     id: 16,
-    question: "¿Qué es el principio de defensa en profundidad?",
+    question: "¿Qué principio establece que el acceso debe ser permitido solo a usuarios específicos?",
     options: [
-      "Usar solo una capa de seguridad muy fuerte",
-      "Implementar múltiples capas de controles de seguridad",
-      "Confiar únicamente en la seguridad del sistema operativo",
-      "Usar solo controles de seguridad físicos"
+      "Validación de entradas",
+      "Modelado de amenazas",
+      "Principio de mínimo privilegio",
+      "Hardening de seguridad"
     ],
-    correctAnswer: 1,
-    explanation: "La defensa en profundidad implica implementar múltiples capas de controles de seguridad para que si una falla, otras puedan seguir protegiendo el sistema."
+    correctAnswer: 2,
+    explanation: "El principio de mínimo privilegio establece que los usuarios deben tener solo los permisos mínimos necesarios para realizar sus funciones."
   },
   {
     id: 17,
-    question: "¿Cuál es el propósito de las pruebas de penetración?",
+    question: "Un desarrollador de DevOps ha dejado claves SSH incrustadas en el código fuente. ¿Qué acción debería tomar para corregir esto?",
     options: [
-      "Optimizar el código fuente",
-      "Simular ataques reales para identificar vulnerabilidades",
-      "Mejorar la interfaz de usuario",
-      "Acelerar el desarrollo"
+      "Eliminar las claves incrustadas y utilizar métodos de acceso seguros",
+      "Mantener las claves en el repositorio para facilitar su acceso",
+      "Reemplazar las claves sin verificar el código",
+      "Dejar las claves para futuras actualizaciones"
     ],
-    correctAnswer: 1,
-    explanation: "Las pruebas de penetración simulan ataques reales para identificar vulnerabilidades de seguridad antes de que sean explotadas por atacantes maliciosos."
+    correctAnswer: 0,
+    explanation: "Las credenciales nunca deben estar hardcodeadas. Se deben eliminar y usar gestores de secretos o variables de entorno seguras."
   },
   {
     id: 18,
-    question: "¿Qué es la sanitización de datos?",
+    question: "Si elimina todos los servicios y procesos innecesarios, ¿qué tipo de amenaza logrará impedir que se materialice?",
     options: [
-      "Eliminar datos innecesarios",
-      "Limpiar y validar datos de entrada para prevenir ataques",
-      "Comprimir datos para ahorrar espacio",
-      "Cifrar todos los datos"
+      "Inyección",
+      "Errores criptográficos",
+      "Diseño inseguro",
+      "Falsificación de solicitudes del lado del servidor",
+      "Configuración incorrecta de seguridad",
+      "Fallos de integridad de software y datos"
     ],
-    correctAnswer: 1,
-    explanation: "La sanitización de datos es el proceso de limpiar y validar datos de entrada para eliminar o neutralizar contenido potencialmente malicioso."
+    correctAnswer: 4,
+    explanation: "Eliminar servicios innecesarios es una práctica de hardening que previene configuraciones incorrectas de seguridad al reducir la superficie de ataque."
   },
   {
     id: 19,
-    question: "¿Cuál es la importancia del logging y monitoreo en seguridad?",
+    question: "Una organización que opera en la nube detecta un incremento de ataques dirigidos hacia su consola de gestión. ¿Qué medida debería implementar?",
     options: [
-      "Solo para cumplir con regulaciones",
-      "Detectar, investigar y responder a incidentes de seguridad",
-      "Mejorar el rendimiento del sistema",
-      "Reducir el uso de recursos"
+      "Realizar pruebas de aplicaciones estáticas (SAST)",
+      "Controlar estrictamente el acceso con privilegios a la consola de gestión",
+      "Utilizar claves SSH incrustadas para asegurar la consola",
+      "Automatizar los scripts de aprovisionamiento"
     ],
     correctAnswer: 1,
-    explanation: "El logging y monitoreo son esenciales para detectar actividades sospechosas, investigar incidentes de seguridad y responder rápidamente a amenazas."
+    explanation: "El control estricto de acceso con privilegios limitados es fundamental para proteger consolas de gestión críticas contra ataques dirigidos."
   },
   {
     id: 20,
-    question: "¿Qué es la autenticación multifactor (MFA)?",
+    question: "Según el GDPR, ¿qué derecho permite a los usuarios solicitar la eliminación de sus datos personales?",
     options: [
-      "Usar múltiples contraseñas",
-      "Combinar dos o más métodos de verificación de identidad",
-      "Autenticarse en múltiples aplicaciones",
-      "Usar solo biometría"
+      "Derecho de supresión",
+      "Derecho de corrección",
+      "Derecho de acceso/portabilidad",
+      "Derecho de oposición"
     ],
-    correctAnswer: 1,
-    explanation: "MFA combina dos o más factores de autenticación (algo que sabes, algo que tienes, algo que eres) para proporcionar mayor seguridad."
+    correctAnswer: 0,
+    explanation: "El derecho de supresión (también conocido como 'derecho al olvido') permite a los usuarios solicitar la eliminación de sus datos personales."
   },
   {
     id: 21,
-    question: "¿Cuál es el objetivo de la revisión de código de seguridad?",
+    question: "Hablando de las métricas de RPO, RTO, MTD dentro de los requerimientos que debe cubrir el proyecto, ¿de qué tipo de criterios se está hablando?",
     options: [
-      "Mejorar solo el rendimiento",
-      "Identificar vulnerabilidades de seguridad en el código fuente",
-      "Reducir el tamaño del código",
-      "Automatizar el despliegue"
+      "Requerimientos de confidencialidad",
+      "Requerimientos de manejo de errores",
+      "Requerimientos de integridad",
+      "Requerimientos de autenticación",
+      "Requerimientos de disponibilidad",
+      "Requerimientos de manejo de configuraciones"
     ],
-    correctAnswer: 1,
-    explanation: "La revisión de código de seguridad busca identificar vulnerabilidades, malas prácticas de seguridad y posibles puntos de entrada para atacantes."
+    correctAnswer: 4,
+    explanation: "RPO (Recovery Point Objective), RTO (Recovery Time Objective) y MTD (Maximum Tolerable Downtime) son métricas relacionadas con la disponibilidad del sistema y la continuidad del negocio."
   },
   {
     id: 22,
-    question: "¿Qué es el hardening de sistemas?",
+    question: "Un equipo de desarrollo necesita aumentar la velocidad de despliegue y asegurar que el código sea probado automáticamente. ¿Qué práctica DevOps debe implementar?",
     options: [
-      "Fortalecer la seguridad mediante la configuración y eliminación de servicios innecesarios",
-      "Aumentar la capacidad de procesamiento",
-      "Instalar más software",
-      "Aumentar la memoria RAM"
+      "Pruebas manuales",
+      "Infraestructura como código (IaC)",
+      "Integración continua (CI)",
+      "Entrega continua (CD)"
     ],
-    correctAnswer: 0,
-    explanation: "El hardening es el proceso de fortalecer la seguridad de un sistema mediante configuraciones seguras, eliminación de servicios innecesarios y aplicación de parches."
+    correctAnswer: 2,
+    explanation: "La Integración Continua (CI) permite que el código sea probado automáticamente cada vez que se realiza un cambio, aumentando la velocidad y calidad del despliegue."
   },
   {
     id: 23,
-    question: "¿Cuál es la importancia de mantener software actualizado?",
+    question: "La aplicación móvil almacena en caché datos confidenciales sin implementar las medidas de seguridad adecuadas. Si un atacante obtiene acceso a la memoria caché del dispositivo, puede obtener estas credenciales. ¿Qué amenaza se describe?",
     options: [
-      "Solo para obtener nuevas características",
-      "Corregir vulnerabilidades de seguridad conocidas",
-      "Mejorar solo la apariencia",
-      "Reducir el uso de recursos"
+      "Validación de entrada/salida insuficiente",
+      "Uso inadecuado de credenciales",
+      "Almacenamiento de datos inseguro",
+      "Autenticación/Autorización insegura",
+      "Controles de privacidad inadecuados",
+      "Comunicación insegura"
     ],
-    correctAnswer: 1,
-    explanation: "Mantener el software actualizado es crucial para corregir vulnerabilidades de seguridad conocidas y protegerse contra exploits públicos."
+    correctAnswer: 2,
+    explanation: "El almacenamiento de datos inseguro ocurre cuando los datos confidenciales se guardan sin protección adecuada en el dispositivo."
   },
   {
     id: 24,
-    question: "¿Qué es un certificado digital?",
+    question: "Esta técnica busca transformar el código fuente original para volver ilegible y difícil de analizar el código, formando parte de los requerimientos antipiratería:",
     options: [
-      "Un documento físico de identificación",
-      "Un archivo electrónico que verifica la identidad de una entidad",
-      "Una contraseña especial",
-      "Un tipo de base de datos"
+      "Ofuscación",
+      "Cifrado asimétrico",
+      "Hasheo",
+      "Replicación",
+      "Copias de seguridad",
+      "Cifrado simétrico"
     ],
-    correctAnswer: 1,
-    explanation: "Un certificado digital es un archivo electrónico que utiliza criptografía de clave pública para verificar la identidad de una entidad y establecer comunicaciones seguras."
+    correctAnswer: 0,
+    explanation: "La ofuscación es una técnica que transforma el código para hacerlo difícil de entender y analizar, protegiendo así la propiedad intelectual."
   },
   {
     id: 25,
-    question: "¿Cuál es el propósito de la segmentación de red?",
+    question: "¿Qué es un análisis manual exhaustivo realizado por un individuo distinto al que desarrolló el código para detectar problemas de sintaxis y posibles vulnerabilidades?",
     options: [
-      "Aumentar la velocidad de Internet",
-      "Dividir la red en segmentos para limitar el alcance de ataques",
-      "Reducir el costo de hardware",
-      "Simplificar la administración"
+      "Pruebas lógicas",
+      "Pruebas de rendimiento",
+      "Fuzzing",
+      "Pruebas de regresión",
+      "Pruebas de penetración",
+      "Revisión de código"
     ],
-    correctAnswer: 1,
-    explanation: "La segmentación de red divide la infraestructura en segmentos separados para limitar el movimiento lateral de atacantes y contener posibles brechas."
+    correctAnswer: 5,
+    explanation: "La revisión de código es un análisis manual realizado por otro desarrollador para detectar errores, vulnerabilidades y mejorar la calidad del código."
   },
   {
     id: 26,
-    question: "¿Qué es el análisis estático de código?",
+    question: "¿Qué tipo de requerimientos permite especificar qué información se le devuelve al usuario en caso de haber un error dentro de la aplicación?",
     options: [
-      "Ejecutar el código para buscar errores",
-      "Examinar el código fuente sin ejecutarlo para encontrar vulnerabilidades",
-      "Compilar el código",
-      "Documentar el código"
+      "Requerimientos de confidencialidad",
+      "Requerimientos de manejo de configuraciones",
+      "Requerimientos de integridad",
+      "Requerimientos de manejo de errores",
+      "Requerimientos de autenticación",
+      "Requerimiento de manejo de errores"
     ],
-    correctAnswer: 1,
-    explanation: "El análisis estático examina el código fuente sin ejecutarlo, utilizando herramientas automatizadas para identificar vulnerabilidades y problemas de seguridad."
+    correctAnswer: 3,
+    explanation: "Los requerimientos de manejo de errores definen cómo la aplicación debe responder ante errores, incluyendo qué información mostrar al usuario."
   },
   {
     id: 27,
-    question: "¿Cuál es la función de un sistema de detección de intrusiones (IDS)?",
+    question: "¿Qué ataque puede aprovecharse de mensajes de error mal gestionados?",
     options: [
-      "Acelerar el tráfico de red",
-      "Monitorear y detectar actividades maliciosas o sospechosas",
-      "Gestionar contraseñas",
-      "Comprimir datos"
+      "Fallas de manejo de excepciones",
+      "Ataques AJAX",
+      "Ataques de validación de entrada",
+      "Cross-Site scripting"
     ],
-    correctAnswer: 1,
-    explanation: "Un IDS monitorea el tráfico de red y las actividades del sistema para detectar comportamientos maliciosos o sospechosos y alertar a los administradores."
+    correctAnswer: 0,
+    explanation: "Las fallas de manejo de excepciones pueden revelar información sensible del sistema cuando los mensajes de error no están correctamente gestionados."
   },
   {
     id: 28,
-    question: "¿Qué es la ingeniería social en el contexto de seguridad?",
+    question: "Un equipo está implementando un servicio en la nube y no tiene en cuenta el aislamiento del contenedor. ¿Cuál es el riesgo?",
     options: [
-      "Desarrollo de software social",
-      "Manipulación psicológica para obtener información confidencial",
-      "Diseño de interfaces de usuario",
-      "Gestión de redes sociales"
+      "El servicio no se podrá ejecutar correctamente",
+      "El acceso al servicio será más rápido",
+      "Vulnerabilidades que pueden comprometer la infraestructura",
+      "La infraestructura de la nube se volverá más accesible"
     ],
-    correctAnswer: 1,
-    explanation: "La ingeniería social es la manipulación psicológica de personas para que divulguen información confidencial o realicen acciones que comprometan la seguridad."
+    correctAnswer: 2,
+    explanation: "La falta de aislamiento de contenedores puede permitir que vulnerabilidades en un contenedor comprometan otros contenedores o la infraestructura subyacente."
   },
   {
     id: 29,
-    question: "¿Cuál es el objetivo de la clasificación de datos?",
+    question: "¿Qué debe hacerse con las cadenas de conexión, contraseñas o claves criptográficas en el código?",
     options: [
-      "Organizar archivos por fecha",
-      "Categorizar datos según su sensibilidad para aplicar controles apropiados",
-      "Reducir el tamaño de archivos",
-      "Mejorar la velocidad de acceso"
+      "Nunca usarlas",
+      "Usarlas en variables de entorno",
+      "Codificarlas en el código",
+      "Almacenarlas en texto plano"
     ],
     correctAnswer: 1,
-    explanation: "La clasificación de datos categoriza la información según su sensibilidad y criticidad para aplicar los controles de seguridad y protección apropiados."
+    explanation: "Las credenciales sensibles deben almacenarse en variables de entorno o gestores de secretos, nunca hardcodeadas en el código fuente."
   },
   {
     id: 30,
-    question: "¿Qué es un plan de respuesta a incidentes?",
+    question: "Los desarrolladores a menudo confían en los datos recibidos, especialmente cuando trabajan con proveedores de renombre e implementan políticas de seguridad menos estrictos. ¿A qué categoría de amenaza hace referencia?",
     options: [
-      "Un manual de usuario",
-      "Un procedimiento documentado para manejar incidentes de seguridad",
-      "Una lista de contactos",
-      "Un cronograma de desarrollo"
+      "Acceso sin restricciones a flujos comerciales sensibles",
+      "Consumo inseguro de API",
+      "Autorización de nivel de función rota",
+      "Falsificación de solicitudes del lado del servidor",
+      "Configuración incorrecta de seguridad",
+      "Autorización de nivel de propiedad de objeto roto"
     ],
     correctAnswer: 1,
-    explanation: "Un plan de respuesta a incidentes es un conjunto de procedimientos documentados para detectar, responder y recuperarse de incidentes de seguridad de manera efectiva."
+    explanation: "El consumo inseguro de API ocurre cuando los desarrolladores confían excesivamente en proveedores externos sin aplicar validaciones adecuadas."
   },
   {
     id: 31,
-    question: "¿Cuál es la importancia de la educación en seguridad para desarrolladores?",
+    question: "Un atacante utiliza ingeniería inversa para descubrir una clave API en una aplicación móvil. ¿Qué tipo de vulnerabilidad está explotando?",
     options: [
-      "Solo para cumplir con certificaciones",
-      "Crear conciencia sobre amenazas y mejores prácticas de seguridad",
-      "Aumentar la velocidad de desarrollo",
-      "Reducir costos de desarrollo"
+      "Almacenamiento inseguro de datos",
+      "Autenticación insegura",
+      "Validación insuficiente",
+      "Protección binaria insuficiente"
     ],
-    correctAnswer: 1,
-    explanation: "La educación en seguridad es fundamental para que los desarrolladores comprendan las amenazas actuales y apliquen las mejores prácticas de desarrollo seguro."
+    correctAnswer: 3,
+    explanation: "La protección binaria insuficiente permite que atacantes usen ingeniería inversa para extraer información sensible del código de la aplicación."
   },
   {
     id: 32,
-    question: "¿Qué es la tokenización en seguridad de datos?",
+    question: "¿Cuáles de las siguientes prácticas de codificación son útiles para simplificar el código?",
     options: [
-      "Dividir texto en palabras",
-      "Reemplazar datos sensibles con tokens no sensibles",
-      "Crear copias de seguridad",
-      "Comprimir archivos"
+      "El software debe tener funciones con nombres similares pero implementación distinta",
+      "Los procesos deben tener varios puntos de entrada y salida",
+      "El software debe evitar ambigüedades y suposiciones ocultas, recursividades e instrucciones GoTo",
+      "Los programadores deben usar múltiples funciones pequeñas y simples en lugar de una función compleja",
+      "El software debe usar acrónimos y abreviaturas para reducir líneas de código",
+      "Los programadores deben implementar funciones de alta consecuencia con líneas mínimas"
     ],
-    correctAnswer: 1,
-    explanation: "La tokenización reemplaza datos sensibles con tokens únicos y no sensibles, manteniendo la funcionalidad mientras protege la información original."
+    correctAnswer: 3,
+    explanation: "Usar múltiples funciones pequeñas y simples mejora la legibilidad, mantenibilidad y reduce la complejidad del código."
   },
   {
     id: 33,
-    question: "¿Cuál es el propósito de las políticas de seguridad?",
+    question: "¿Qué puede causar una brecha de seguridad de datos en una base de datos?",
     options: [
-      "Documentar el código",
-      "Establecer reglas y procedimientos para proteger los activos de información",
-      "Mejorar la interfaz de usuario",
-      "Acelerar el desarrollo"
+      "Uso excesivo de cifrado",
+      "Baja conectividad de red",
+      "No aplicar parches de seguridad",
+      "Falta de personal en la base de datos"
     ],
-    correctAnswer: 1,
-    explanation: "Las políticas de seguridad establecen las reglas, procedimientos y estándares que una organización debe seguir para proteger sus activos de información."
+    correctAnswer: 2,
+    explanation: "No aplicar parches de seguridad deja vulnerabilidades conocidas sin resolver, facilitando brechas de seguridad en bases de datos."
   },
   {
     id: 34,
-    question: "¿Qué es la evaluación de vulnerabilidades?",
+    question: "Una organización desarrolla un modelo de IA utilizando datos anonimizados en lugar de datos reales para proteger la privacidad de los usuarios. ¿Qué técnica está utilizando?",
     options: [
-      "Medir el rendimiento del sistema",
-      "Identificar y evaluar debilidades de seguridad en sistemas",
-      "Contar líneas de código",
-      "Revisar la documentación"
+      "Plataforma de gestión de consentimiento",
+      "Uso de datos sintéticos",
+      "Derecho de corrección",
+      "Entrenamiento adversarial"
     ],
     correctAnswer: 1,
-    explanation: "La evaluación de vulnerabilidades es un proceso sistemático para identificar, cuantificar y priorizar las vulnerabilidades de seguridad en un sistema."
+    explanation: "El uso de datos sintéticos permite entrenar modelos de IA sin comprometer la privacidad de los usuarios reales."
   },
   {
     id: 35,
-    question: "¿Cuál es la diferencia entre HTTP y HTTPS?",
+    question: "Un desarrollador web está migrando una aplicación a un entorno móvil, pero el dispositivo tiene baja capacidad de memoria. ¿Qué debería hacer?",
     options: [
-      "HTTPS es más rápido que HTTP",
-      "HTTPS incluye cifrado SSL/TLS para comunicaciones seguras",
-      "HTTP es más seguro que HTTPS",
-      "No hay diferencia significativa"
+      "Aumentar el almacenamiento del dispositivo",
+      "Rediseñar para incluir solo funciones esenciales",
+      "Usar exclusivamente APIs de escritorio",
+      "Reducir el soporte del dispositivo"
     ],
     correctAnswer: 1,
-    explanation: "HTTPS (HTTP Secure) utiliza cifrado SSL/TLS para proteger la comunicación entre el navegador y el servidor, mientras que HTTP transmite datos en texto plano."
+    explanation: "Rediseñar la aplicación para incluir solo funciones esenciales optimiza el uso de memoria y mejora el rendimiento en dispositivos con recursos limitados."
   },
   {
     id: 36,
-    question: "¿Qué es la gestión de parches de seguridad?",
+    question: "¿Cuál es una solución para prevenir ataques SSRF?",
     options: [
-      "Crear nuevas funcionalidades",
-      "Proceso de identificar, probar y aplicar actualizaciones de seguridad",
-      "Diseñar interfaces",
-      "Optimizar bases de datos"
+      "Hacer uso de bibliotecas de URLs antiguas",
+      "Validar y sanear entradas del usuario",
+      "Deshabilitar la autenticación de usuario",
+      "Implementar una red de contenedores"
     ],
     correctAnswer: 1,
-    explanation: "La gestión de parches es el proceso sistemático de identificar, evaluar, probar y aplicar actualizaciones de seguridad para corregir vulnerabilidades."
+    explanation: "La validación y sanitización de entradas del usuario es fundamental para prevenir ataques SSRF (Server-Side Request Forgery)."
   },
   {
     id: 37,
-    question: "¿Cuál es el objetivo de la arquitectura de seguridad?",
+    question: "¿Qué recomienda OWASP para mitigar riesgos de seguridad y mejorar la comprensión de las decisiones del modelo?",
     options: [
-      "Mejorar solo el rendimiento",
-      "Diseñar sistemas con controles de seguridad integrados desde el inicio",
-      "Reducir costos de desarrollo",
-      "Acelerar el tiempo de entrega"
+      "Reducir los datos recolectados",
+      "Mantener registros cifrados",
+      "Proveer explicaciones comprensibles mediante LIME o SHAP",
+      "Realizar auditorías periódicas"
     ],
-    correctAnswer: 1,
-    explanation: "La arquitectura de seguridad busca integrar controles y principios de seguridad en el diseño fundamental del sistema desde las etapas iniciales."
+    correctAnswer: 2,
+    explanation: "LIME (Local Interpretable Model-agnostic Explanations) y SHAP (SHapley Additive exPlanations) son técnicas que ayudan a explicar las decisiones de modelos de IA."
   },
   {
     id: 38,
-    question: "¿Qué son los controles de acceso basados en roles (RBAC)?",
+    question: "Cuando una aplicación de IA cambia sus políticas de privacidad o introduce nuevas funcionalidades, ¿qué debe hacer la empresa respecto al consentimiento?",
     options: [
-      "Controles basados en ubicación geográfica",
-      "Sistema que asigna permisos según los roles de usuario",
-      "Controles basados en horarios",
-      "Sistema de contraseñas por departamento"
+      "No es necesario hacer nada si el consentimiento ya ha sido obtenido",
+      "La empresa debe notificar a los usuarios y pedirles que revisen y confirmen nuevamente su consentimiento",
+      "Solo se debe actualizar el consentimiento si hay un cambio en el algoritmo",
+      "El consentimiento no es necesario si las políticas no cambian"
     ],
     correctAnswer: 1,
-    explanation: "RBAC es un modelo de control de acceso que asigna permisos a usuarios basándose en sus roles dentro de la organización, simplificando la gestión de permisos."
+    explanation: "Cualquier cambio material en políticas de privacidad o funcionalidades requiere notificación y nueva confirmación de consentimiento por parte de los usuarios."
   },
   {
     id: 39,
-    question: "¿Cuál es la importancia del cifrado de datos en reposo?",
+    question: "¿Qué actividad inicial se realiza en la gestión de configuraciones de software (SCM)?",
     options: [
-      "Solo para cumplir regulaciones",
-      "Proteger datos almacenados contra acceso no autorizado",
-      "Mejorar la velocidad de acceso",
-      "Reducir el espacio de almacenamiento"
+      "Identificación de artículos de configuración",
+      "Análisis de vulnerabilidades",
+      "Auditorías técnicas",
+      "Registro de solicitudes de cambio"
     ],
-    correctAnswer: 1,
-    explanation: "El cifrado de datos en reposo protege la información almacenada contra acceso no autorizado, incluso si los dispositivos de almacenamiento son comprometidos."
+    correctAnswer: 0,
+    explanation: "La identificación de artículos de configuración es el primer paso en SCM, definiendo qué elementos serán controlados y gestionados."
   },
   {
     id: 40,
-    question: "¿Qué es un análisis de impacto de privacidad (PIA)?",
+    question: "¿Qué medida es un ejemplo de control de seguridad física?",
     options: [
-      "Análisis de rendimiento de aplicaciones",
-      "Evaluación de cómo un proyecto afecta la privacidad de datos personales",
-      "Revisión de código fuente",
-      "Análisis de costos de desarrollo"
+      "Autenticación de dos factores",
+      "Software antivirus",
+      "Firewalls",
+      "Tarjetas de control de acceso"
     ],
-    correctAnswer: 1,
-    explanation: "Un PIA evalúa cómo un proyecto, sistema o proceso puede afectar la privacidad de los datos personales y qué medidas se necesitan para protegerla."
+    correctAnswer: 3,
+    explanation: "Las tarjetas de control de acceso son controles de seguridad física que restringen el acceso a ubicaciones o recursos físicos."
   },
   {
     id: 41,
-    question: "¿Cuál es el propósito de la autenticación basada en certificados?",
+    question: "Para prevenir configuración incorrecta de seguridad, decide realizar hardening eliminando componentes no necesarios y automatizar verificación de cambios. ¿Esto logrará impedir que se materialice la amenaza?",
     options: [
-      "Acelerar el proceso de login",
-      "Proporcionar autenticación fuerte usando criptografía de clave pública",
-      "Reducir el uso de memoria",
-      "Simplificar las interfaces"
+      "Falso",
+      "Verdadero"
     ],
     correctAnswer: 1,
-    explanation: "La autenticación basada en certificados utiliza criptografía de clave pública para proporcionar una forma más segura de verificar identidades."
+    explanation: "El hardening mediante eliminación de componentes innecesarios y automatización de verificaciones es efectivo para prevenir configuraciones incorrectas de seguridad."
   },
   {
     id: 42,
-    question: "¿Qué es la gestión de vulnerabilidades?",
+    question: "Un equipo está configurando su infraestructura en la nube. ¿Qué práctica de seguridad deben implementar?",
     options: [
-      "Crear nuevas funcionalidades",
-      "Proceso continuo de identificar, evaluar y remediar vulnerabilidades",
-      "Diseñar interfaces de usuario",
-      "Optimizar bases de datos"
+      "Ignorar las claves API",
+      "Dejar las claves de acceso expuestas en el código fuente",
+      "Proteger las claves SSH de las API utilizadas en el código",
+      "No verificar las claves SSH"
     ],
-    correctAnswer: 1,
-    explanation: "La gestión de vulnerabilidades es un proceso continuo que incluye la identificación, evaluación, priorización y remediación de vulnerabilidades de seguridad."
+    correctAnswer: 2,
+    explanation: "Proteger las claves SSH y API es fundamental para la seguridad en la nube, evitando accesos no autorizados."
   },
   {
     id: 43,
-    question: "¿Cuál es la importancia de la configuración segura por defecto?",
+    question: "En un pipeline de DevSecOps, ¿qué herramientas son utilizadas en la fase de construcción para detectar fallas en el código antes de su implementación?",
     options: [
-      "Minimizar la superficie de ataque desde la instalación inicial",
-      "Mejorar solo el rendimiento",
-      "Facilitar la instalación",
-      "Reducir el tamaño del software"
+      "Herramientas de prueba dinámica de aplicaciones (DAST)",
+      "Plataformas de análisis de vulnerabilidades",
+      "Herramientas de prueba estática de aplicaciones (SAST)",
+      "Consolas de administración SaaS"
     ],
-    correctAnswer: 0,
-    explanation: "La configuración segura por defecto minimiza la superficie de ataque desde el momento de la instalación, requiriendo acciones explícitas para habilitar funcionalidades potencialmente riesgosas."
+    correctAnswer: 2,
+    explanation: "SAST (Static Application Security Testing) analiza el código fuente durante la fase de construcción para detectar vulnerabilidades antes de la ejecución."
   },
   {
     id: 44,
-    question: "¿Qué es el principio de fail-safe en seguridad?",
+    question: "¿Qué tipo de vulnerabilidades permiten al atacante acceder a objetos de datos cuyo acceso debería haberse restringido?",
     options: [
-      "Nunca fallar en el sistema",
-      "Fallar de manera segura, denegando acceso cuando hay problemas",
-      "Reiniciar automáticamente",
-      "Ignorar errores de seguridad"
+      "Gestión inadecuada del inventario",
+      "Acceso sin restricciones a flujos comerciales sensibles",
+      "Consumo de recursos sin restricciones",
+      "Falsificación de solicitudes del lado del servidor",
+      "Autorización de nivel de objeto roto",
+      "Configuración incorrecta de seguridad"
     ],
-    correctAnswer: 1,
-    explanation: "El principio fail-safe establece que cuando un sistema falla o encuentra un error, debe fallar de manera segura, típicamente denegando acceso hasta que se resuelva el problema."
+    correctAnswer: 4,
+    explanation: "La autorización de nivel de objeto roto permite a atacantes acceder a objetos para los cuales no deberían tener permisos."
   },
   {
     id: 45,
-    question: "¿Cuál es el objetivo de la gestión de identidades y accesos (IAM)?",
+    question: "¿Qué práctica ayuda a garantizar que un modelo de IA sea resistente a manipulaciones externas?",
     options: [
-      "Gestionar solo contraseñas",
-      "Controlar quién tiene acceso a qué recursos y cuándo",
-      "Mejorar la velocidad de red",
-      "Reducir costos de hardware"
+      "Realizar pruebas de caja blanca",
+      "Implementar pruebas adversariales",
+      "Utilizar OWASP ZAP",
+      "Supervisar métricas clave"
     ],
     correctAnswer: 1,
-    explanation: "IAM es un marco de políticas y tecnologías que asegura que las personas correctas tengan el acceso apropiado a los recursos correctos en el momento correcto."
+    explanation: "Las pruebas adversariales evalúan la resistencia del modelo ante ataques diseñados específicamente para engañar o manipular sus decisiones."
   },
   {
     id: 46,
-    question: "¿Qué es la criptografía simétrica?",
+    question: "Considerando una aplicación con validación de entrada pobre, ¿qué tipo de amenazas podrían presentarse?",
     options: [
-      "Usar diferentes claves para cifrar y descifrar",
-      "Usar la misma clave para cifrar y descifrar datos",
-      "No usar claves de cifrado",
-      "Usar solo números en las claves"
+      "Robo de sesión",
+      "Inyección SQL",
+      "Mensajes de error detallados",
+      "Falsificación de solicitudes del lado del servidor",
+      "XSS",
+      "Fuerza Bruta"
     ],
     correctAnswer: 1,
-    explanation: "La criptografía simétrica utiliza la misma clave secreta para cifrar y descifrar datos, siendo eficiente para grandes volúmenes de información."
+    explanation: "La validación de entrada pobre es la principal causa de ataques de inyección SQL, donde código malicioso se ejecuta en la base de datos."
   },
   {
     id: 47,
-    question: "¿Cuál es la ventaja principal de la criptografía asimétrica?",
+    question: "Para prevenir cierto tipo de vulnerabilidad, decide implementar el número máximo de intentos de autenticación permitido y desactivar la cuenta tras superarlo. ¿Qué tipo de amenaza logrará impedir?",
     options: [
-      "Es más rápida que la simétrica",
-      "Permite intercambio seguro de claves sin canal seguro previo",
-      "Usa menos recursos computacionales",
-      "Es más fácil de implementar"
+      "Falsificación de solicitudes del lado del servidor",
+      "Fallos de integridad de software y datos",
+      "Inyección",
+      "Configuración incorrecta de seguridad",
+      "Errores de identificación y autenticación",
+      "Fallos de integridad de software y datos"
     ],
-    correctAnswer: 1,
-    explanation: "La criptografía asimétrica permite el intercambio seguro de claves y la comunicación segura sin necesidad de un canal seguro preestablecido."
+    correctAnswer: 4,
+    explanation: "Limitar intentos de autenticación y bloquear cuentas previene ataques de fuerza bruta y otros errores de identificación y autenticación."
   },
   {
     id: 48,
-    question: "¿Qué es un honeypot en seguridad informática?",
+    question: "Un usuario es incapaz de desactivar permisos innecesarios en una aplicación móvil. ¿Qué vulnerabilidad se está explotando?",
     options: [
-      "Un tipo de antivirus",
-      "Un sistema señuelo diseñado para atraer y detectar atacantes",
-      "Una herramienta de desarrollo",
-      "Un protocolo de red"
+      "Autenticación Insegura",
+      "Protección binaria insuficiente",
+      "Configuración incorrecta de seguridad",
+      "Criptografía insuficiente"
     ],
-    correctAnswer: 1,
-    explanation: "Un honeypot es un sistema señuelo que simula ser vulnerable para atraer atacantes, permitiendo estudiar sus métodos y detectar ataques."
+    correctAnswer: 2,
+    explanation: "La configuración incorrecta de seguridad incluye no permitir a los usuarios controlar los permisos de la aplicación según sus necesidades."
   },
   {
     id: 49,
-    question: "¿Cuál es la importancia de la trazabilidad en seguridad?",
+    question: "¿Qué tipo de vulnerabilidad permite que el atacante pueda acceder, modificar, agregar y eliminar valores de propiedad a los objetos?",
     options: [
-      "Mejorar el rendimiento",
-      "Rastrear acciones y cambios para auditorías y investigaciones",
-      "Reducir el uso de memoria",
-      "Acelerar las consultas"
+      "Falsificación de solicitudes del lado del servidor",
+      "Autorización de nivel de propiedad de objeto roto",
+      "Consumo de recursos sin restricciones",
+      "Gestión inadecuada del inventario",
+      "Acceso sin restricciones a flujos comerciales sensibles",
+      "Configuración incorrecta de seguridad"
     ],
     correctAnswer: 1,
-    explanation: "La trazabilidad permite rastrear quién hizo qué, cuándo y dónde, siendo esencial para auditorías, cumplimiento normativo e investigaciones de incidentes."
+    explanation: "La autorización de nivel de propiedad de objeto roto permite a atacantes manipular propiedades específicas de objetos sin autorización adecuada."
   },
   {
     id: 50,
-    question: "¿Qué es la validación de entrada del lado del servidor?",
+    question: "Un equipo realiza cambios frecuentes en los contenedores sin monitoreo. ¿Qué problema podría surgir?",
     options: [
-      "Validación que solo mejora la experiencia de usuario",
-      "Verificación de datos en el servidor para garantizar seguridad",
-      "Verificación de datos en el servidor para garantizar seguridad",
-      "Verificación de velocidad de conexión"
+      "Los contenedores se implementarán más rápido",
+      "La introducción de vulnerabilidades no identificadas",
+      "No será necesario hacer más pruebas",
+      "Los cambios serán más fáciles de revertir"
     ],
     correctAnswer: 1,
-    explanation: "La validación del lado del servidor es crucial para la seguridad, ya que verifica y sanitiza todos los datos recibidos, independientemente de la validación del cliente."
+    explanation: "Realizar cambios sin monitoreo puede introducir vulnerabilidades no identificadas, comprometiendo la seguridad del sistema."
   }
 ];
 
